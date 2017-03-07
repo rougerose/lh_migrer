@@ -1,0 +1,13 @@
+[(#AUTORISER{configurer,_lh_migrer}|sinon_interdire_acces)]
+
+<h1 class="grostitre"><:lh_migrer:titre_page_configurer_lh_migrer:></h1>
+<BOUCLE_rubrique_artistes(RUBRIQUES){id_rubrique=2}>
+  <ul>
+    <BOUCLE_articles(ARTICLES){branche}{titre LIKE 01.%}{par id_article}>
+    <li>- #TITRE / #ID_ARTICLE [<small>\(Rubrique: (#INFO_TITRE{rubrique,#ID_RUBRIQUE})\)</small>]</li>
+    </BOUCLE_articles>
+  </ul>
+</BOUCLE_rubrique_artistes>
+<div class="ajax">
+  #FORMULAIRE_CONFIGURER_LH_MIGRER
+</div>
