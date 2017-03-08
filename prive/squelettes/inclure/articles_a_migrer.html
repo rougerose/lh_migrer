@@ -1,7 +1,14 @@
+#CACHE{0}
 <BOUCLE_rubrique_artistes(RUBRIQUES){id_rubrique=2}>
   <ul>
     <BOUCLE_articles(ARTICLES){branche}{titre LIKE %artist%}{par id_article}{statut=publie}>
     <li>- #TITRE* / #ID_ARTICLE [<small>\(Rubrique: (#INFO_TITRE{rubrique,#ID_RUBRIQUE})\)</small>]</li>
     </BOUCLE_articles>
+  </ul>
+  <hr>
+  <ul>
+    <BOUCLE_oeuvres(ARTICLES){branche}{titre LIKE %uvre%}{par id_rubrique}{statut=publie}>
+    <li>- #TITRE* / #ID_ARTICLE [<small>\(Rubrique: (#INFO_TITRE{rubrique,#ID_RUBRIQUE})\)</small>]</li>
+    </BOUCLE_oeuvres>
   </ul>
 </BOUCLE_rubrique_artistes>
