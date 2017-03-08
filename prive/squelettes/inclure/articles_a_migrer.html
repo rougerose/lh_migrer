@@ -1,0 +1,7 @@
+<BOUCLE_rubrique_artistes(RUBRIQUES){id_rubrique=2}>
+  <ul>
+    <BOUCLE_articles(ARTICLES){branche}{titre LIKE %artist%}{par id_article}{statut=publie}>
+    <li>- #TITRE* / #ID_ARTICLE [<small>\(Rubrique: (#INFO_TITRE{rubrique,#ID_RUBRIQUE})\)</small>]</li>
+    </BOUCLE_articles>
+  </ul>
+</BOUCLE_rubrique_artistes>

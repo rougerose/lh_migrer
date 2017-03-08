@@ -65,10 +65,10 @@ function formulaires_configurer_lh_migrer_traiter_dist() {
         article_modifier($id_article, $champs);
 
         // Traiter les documents (oeuvres)
-        // l'article qui contient les oeuvres est dans la même rubrique et le titre contient 02.
+        // l'article qui contient les oeuvres est dans la même rubrique.
         $where_oeuvres = array(
             'id_rubrique='.$id_rubrique,
-            'titre LIKE "02.%"'
+            'titre LIKE "%uvre%"'
         );
 
         $article_oeuvres = sql_fetsel('*', 'spip_articles', $where_oeuvres);
@@ -83,7 +83,7 @@ function formulaires_configurer_lh_migrer_traiter_dist() {
                 article_modifier($id_article_oeuvres, array('statut' => 'prop'));
             }
 
-            migrer_documents_oeuvres($id_article_oeuvres['id_article'], $id_article);
+            migrer_documents_oeuvres($id_article_oeuvres, $id_article);
 
         }
     }
